@@ -1,4 +1,4 @@
-﻿cls
+cls
 @echo off
 chcp 65001 >nul
 
