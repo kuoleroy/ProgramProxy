@@ -2,7 +2,7 @@
 
 Windows 一键代理包：双击脚本，自动启动本地代理并打开浏览器。
 
-原作者：https://github.com/Alvin9999-newpac/fanqiang
+原作者：https://github.com/Alvin9999-newpac
 
 ## 准备工作
 
@@ -58,7 +58,12 @@ set ALL_PROXY=socks5://127.0.0.1:1080
 
 ## 节点更新
 
-节点失效或变慢时，启动脚本时选 IP 更新即可，从原作者源拉取：
+节点失效或变慢时，启动脚本时选 IP 更新即可，从原作者源拉取
 
-- 主源：`https://gitlab.com/free9999/ipupdate/...`
-- 备用：`https://www.67867867.xyz/Alvin9999/PAC/...`
+更新问题发邮件给：freeman105@gmail.com
+
+自动回复，不解答问题，标题不可空白
+
+## 开源协议
+
+MIT License — 详见 [LICENSE](LICENSE)
