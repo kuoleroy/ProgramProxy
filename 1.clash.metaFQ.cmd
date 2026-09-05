@@ -14,7 +14,7 @@ title Clash.Meta 一键启动
 
 echo 是否执行IP更新？IP更新从云端更新IP配置以解决封锁问题！第一次使用务必先更新IP.
 echo 按7跳过，按1选择ip1更新，若ip1不好用再选ip2、3...更新，如果更新后都用不了，请发邮件到 freeman105@gmail.com 进行反馈！
-choice /C 1234567 /T 17 /D 7 /M "1、ip1更新  2、ip2更新  3、ip3更新  4、ip4更新 5、ip5更新 6、ip6更新 7、跳过"
+choice /C 1234567 /T 17 /D 7 /M "Select:"
 if errorlevel 7 goto startfq
 if errorlevel 6 goto ip6
 if errorlevel 5 goto ip5

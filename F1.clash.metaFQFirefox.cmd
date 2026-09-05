@@ -27,7 +27,7 @@ title Clash.Meta Firefox
 
 echo 是否执行IP更新？IP更新可能导致IP被封，如果觉得速度没问题，第一次使用请先更新IP.
 echo 7秒后自动跳过选择ip1更新，如ip1不能用，再选ip2、3...更新，更新后如不好用，请发邮件至 freeman105@gmail.com 反馈问题.
-choice /C 1234567 /T 17 /D 7 /M "1:ip1更新  2:ip2更新  3:ip3更新  4:ip4更新 5:ip5更新 6:ip6更新 7:跳过"
+choice /C 1234567 /T 17 /D 7 /M "Select:"
 if errorlevel 7 goto startfq
 if errorlevel 6 goto ip6
 if errorlevel 5 goto ip5

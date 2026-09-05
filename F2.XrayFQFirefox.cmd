@@ -27,7 +27,7 @@ title Xray Firefox
 
 echo 是否执行IP更新？IP更新可能导致IP被封，如果觉得速度没问题，第一次使用请先更新IP.
 echo 5秒后自动跳过选择ip1更新，如ip1不能用，再选ip2、3...更新，更新后如不好用，请发邮件至freeman105@gmail.com 反馈问题.
-choice /C 12345 /T 15 /D 5 /M "1:ip1更新  2:ip2更新  3:ip3更新  4:ip4更新 5:跳过"
+choice /C 12345 /T 15 /D 5 /M "Select:"
 if errorlevel 5 goto startfq
 if errorlevel 4 goto ip4
 if errorlevel 3 goto ip3

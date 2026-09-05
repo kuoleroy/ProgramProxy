@@ -60,7 +60,7 @@ title Hysteria 一键启动
 
 echo 是否执行IP更新？IP更新从云端更新IP配置以解决封锁问题！第一次使用务必先更新IP.
 echo 按5跳过，按1选择ip1更新，若ip1不好用再按2选ip2更新，如果更新后都用不了，请发邮件到 freeman105@gmail.com 进行反馈！
-choice /C 12345 /T 15 /D 5 /M "1、ip1更新  2、ip2更新  3、ip3更新  4、ip4更新 5、跳过"
+choice /C 12345 /T 15 /D 5 /M "Select:"
 if errorlevel 5 goto startfq
 if errorlevel 4 goto ip4
 if errorlevel 3 goto ip3

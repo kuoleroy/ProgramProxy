@@ -27,7 +27,7 @@ title SingBox Firefox
 
 echo 是否执行IP更新？IP更新可能导致IP被封，如果觉得速度没问题，希望你选择IP更新.
 echo 3秒后自动跳过选择ip1更新，如ip1不能用，再选ip2更新，更新后如不好用，请发邮件至freeman105@gmail.com反馈问题.
-choice /C 123 /T 15 /D 3 /M "1:ip1更新 2:ip2更新 3:跳过"
+choice /C 123 /T 15 /D 3 /M "Select:"
 if errorlevel 3 goto startfq
 if errorlevel 2 goto ip2
 if errorlevel 1 goto ip1
