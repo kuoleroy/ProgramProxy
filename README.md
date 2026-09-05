@@ -1,46 +1,46 @@
-# ProgramProxy 使用说明
+# ProgramProxy
 
-Windows 一键代理包：双击脚本，自动启动本地代理并打开浏览器。
+Windows one-click proxy: double-click a script to start local proxy and open browser.
 
-原作者：https://github.com/Alvin9999-newpac
+Based on: https://github.com/Alvin9999-newpac
 
-## 准备工作
+## Requirements
 
-- 需要管理员权限运行（脚本会自动提权）
-- Chrome / Edge / Firefox 至少装一个
-- 不要在压缩包里直接运行，先完整解压到本地磁盘
-- 杀毒软件可能隔离代理程序，报毒请加排除项
+- Run as administrator (script auto-elevates)
+- At least one browser: Chrome / Edge / Firefox
+- Extract fully to local disk before running (not from inside a zip)
+- Antivirus may flag proxy programs — add exclusion if needed
 
-## 新用户首次使用
+## First-time Use
 
-仓库里不含节点配置文件，第一次用必须先拉一份：
+Config files are not included in the repo. First run must fetch them:
 
-1. 双击任意协议脚本（如 `1.clash.metaFQ.cmd`）
-2. 在 IP 更新选项里选 `1`（不要选跳过），等下载完成
-3. 之后按正常流程使用即可
+1. Double-click any script (e.g. `1_clash_metaFQ.cmd`)
+2. In the IP update prompt, press `1` (don't skip), wait for download
+3. Done — use normally from now on
 
-## 如何使用
+## How to Use
 
-1. 按前缀选浏览器，再按数字选协议（数字越小越常用）：
-   - 数字开头 → Chrome，如 `1.clash.metaFQ.cmd`
-   - `E` 开头 → Edge，如 `E1.clash.metaFQEdge.cmd`
-   - `F` 开头 → Firefox，如 `F1.clash.metaFQFirefox.cmd`
-2. 启动后会问是否更新 IP：平时什么都别按，等倒计时结束自动跳过即可；
-   只有上不了网或速度明显变差时，才手动选 `1` 换节点
-   （更新可能换来更差的节点，能用就别更新）
-3. 等代理启动后浏览器自动打开，直接上网
-4. 主脚本双击闪退没反应时，用同名的 `备用` 脚本
+1. Pick browser by prefix, then protocol by number (lower = more common):
+   - Number prefix → Chrome, e.g. `1_clash_metaFQ.cmd`
+   - `E` prefix → Edge, e.g. `E1_clash_metaFQEdge.cmd`
+   - `F` prefix → Firefox, e.g. `F1_clash_metaFQFirefox.cmd`
+2. IP update prompt: just wait for countdown to auto-skip;
+   only press `1` when connection is broken or very slow
+   (update may give worse IPs — don't update if it works)
+3. Browser opens automatically after proxy starts
+4. If main script crashes, use the `backup` version (e.g. `1_backup_clash_metaFQ.cmd`)
 
-建议按顺序挨个试，哪个快用哪个。
+Try them in order — pick whichever is fastest.
 
-## 给其他软件用代理
+## Proxy for Other Apps
 
-代理只在本地监听，不改系统设置：
+Proxy listens locally, does NOT change system settings:
 
-- Clash.Meta：`127.0.0.1:7890`（HTTP）
-- Xray / SingBox / Hysteria 等：`127.0.0.1:1080`（SOCKS5）
+- Clash.Meta: `127.0.0.1:7890` (HTTP)
+- Xray / SingBox / Hysteria etc: `127.0.0.1:1080` (SOCKS5)
 
-命令行工具：
+Command line:
 
 ```cmd
 set HTTP_PROXY=http://127.0.0.1:7890
@@ -48,22 +48,22 @@ set HTTPS_PROXY=http://127.0.0.1:7890
 set ALL_PROXY=socks5://127.0.0.1:1080
 ```
 
-用 `代理启动器.cmd` 带代理启动任意软件（opencode、git、python 等）：
+Use `proxy_launcher.cmd` to launch any app with proxy env (opencode, git, python etc.):
 
-1. 双击运行，先选代理类型（Clash.Meta / Xray / SingBox / Hysteria，
-   或直接用已在跑的代理）
-2. 把要启动的 exe 拖进窗口（或手动输入完整路径），回车即以代理环境启动
-3. 只对认环境变量代理的软件有效；Chrome / Edge / Firefox 不认环境变量，
-   仍需用上面的浏览器脚本启动
+1. Double-click to run, select proxy type (Clash.Meta / Xray / SingBox / Hysteria,
+   or use already-running proxy)
+2. Drag the exe into the window (or type full path), press Enter
+3. Only works for apps that read proxy env vars;
+   Chrome / Edge / Firefox don't — use the browser scripts above
 
-## 节点更新
+## IP Update
 
-节点失效或变慢时，启动脚本时选 IP 更新即可，从原作者源拉取
+When nodes fail or slow down, pick IP update in the script to fetch from source.
 
-更新问题发邮件给：freeman105@gmail.com
+Issues: freeman105@gmail.com
 
-自动回复，不解答问题，标题不可空白
+Auto-reply, no support. Subject must not be blank.
 
-## 开源协议
+## License
 
-MIT License — 详见 [LICENSE](LICENSE)
+MIT License — see [LICENSE](LICENSE)
