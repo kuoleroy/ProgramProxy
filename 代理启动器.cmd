@@ -59,5 +59,7 @@ echo Waiting for proxy...
 timeout /t 3 /nobreak >nul
 echo.
 set /P APPPATH="Drag the exe here or input full path: "
-start "" %APPPATH%
+set APPPATH=%APPPATH:"=%
+powershell -NoProfile -Command "Start-Process -FilePath '%APPPATH%'"
+echo Started. You can close this window, the program keeps running.
 pause
