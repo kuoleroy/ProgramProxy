@@ -56,7 +56,7 @@ if not exist "%~dp0shadowquic\shadowquic.exe" (
 
 rem -------------------------
 
-title ShadowQuic 一键启动
+title ShadowQuic One-Click Launcher
 
 echo 是否执行IP更新？IP更新从云端更新IP配置以解决封锁问题！
 echo 按3跳过，按1选择ip1更新，若ip1不好用再按2选ip2更新，如果更新后都用不了，请发邮件到freeman105@gmail.com进行反馈！
@@ -83,7 +83,7 @@ goto startfq
 
 :startfq
 
-echo 等待翻墙软件启动，请稍候...
+echo Waiting for proxy to start, please wait...
 start "" /D "%~dp0shadowquic" "%~dp0shadowquic\shadowquic.exe" -c "%~dp0shadowquic\client.yaml"
 IF EXIST %~dp0Browser\chrome.exe (
     start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:4080"  about:blank
@@ -92,9 +92,9 @@ IF EXIST %~dp0Browser\chrome.exe (
 	IF  not errorlevel 1 (
 		start chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:4080"  about:blank
 	) else ( 
-		echo Chrome浏览器不存在或没有正确安装，请尝试重新安装Chrome浏览器
-		echo 或者采用以下办法：
-		echo 右键点桌面的Google Chrome图标，再点属性，找到chrome.exe文件的路径，然后打开那个目录，把chrome.exe 连同那个目录下的所有子文件夹和文件，一起拷贝到ProgramProxy文件夹下的Browser目录里面，然后重新启动ProgramProxy的翻墙脚本。
+		echo Chrome not found or not installed correctly. Try reinstalling Chrome.
+		echo Or try this:
+		echo Right-click Chrome icon > Properties > find chrome.exe path. Copy chrome.exe and all files/folders in that directory to ProgramProxy\Browser folder, then restart the script.
 		pause
 	)
 )

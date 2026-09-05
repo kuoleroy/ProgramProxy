@@ -9,10 +9,10 @@ cd /d "%~dp0"
   exit /b
 )
 
-title Clash.Meta 一键启动
+title Clash.Meta One-Click Launcher
 
-echo 是否执行IP更新？IP更新从云端更新IP配置以解决封锁问题！第一次使用务必先更新IP.
-echo 按7跳过，按1选择ip1更新，若ip1不好用再选ip2、3...更新，如果更新后都用不了，请发邮件到 freeman105@gmail.com 进行反馈！
+echo Update IP now? IP update fetches new configs from cloud to fix blocking. First time users MUST update.
+echo Press 7 to skip, 1 for ip1 update. If ip1 bad, try ip2, ip3... If all fail, email freeman105@gmail.com
 choice /C 1234567 /T 17 /D 7 /M "Select:"
 if errorlevel 7 goto startfq
 if errorlevel 6 goto ip6
@@ -49,7 +49,7 @@ goto startfq
 :startfq
 
 start "" /D "%~dp0clash.meta" "%~dp0clash.meta\clash.meta-windows-386.exe" -d "%~dp0clash.meta"
-echo 等待翻墙软件启动，请稍候...
+echo Waiting for proxy to start, please wait...
 IF EXIST %~dp0Browser\chrome.exe (
     start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server=127.0.0.1:7890 about:blank
 ) ELSE (
@@ -57,9 +57,9 @@ IF EXIST %~dp0Browser\chrome.exe (
 	IF  not errorlevel 1 (
     start chrome.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server=127.0.0.1:7890 about:blank
 	) else (
-		echo Chrome浏览器不存在或没有正确安装，请尝试重新安装Chrome浏览器
-		echo 或者采用以下办法：
-		echo 右键点桌面的Google Chrome图标，再点属性，找到chrome.exe文件的路径，然后打开那个目录，把chrome.exe 连同那个目录下的所有子文件夹和文件，一起拷贝到ProgramProxy文件夹下的Browser目录里面，然后重新启动ProgramProxy的翻墙脚本。
+		echo Chrome not found or not installed correctly. Try reinstalling Chrome.
+		echo Or try this:
+		echo Right-click Chrome icon > Properties > find chrome.exe path. Copy chrome.exe and all files/folders in that directory to ProgramProxy\Browser folder, then restart the script.
 		pause
 	)
 )
