@@ -1,6 +1,6 @@
 # ProgramProxy
 
-> [中文说明](README.zh.md)
+> [中文说明](README.zh-CN.md)
 
 Windows one-click proxy: double-click a script to start local proxy and open browser.
 
