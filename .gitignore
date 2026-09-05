@@ -1,0 +1,22 @@
+# ===== 浏览器缓存 / 用户数据（不提交）=====
+chrome-user-data/
+Firefox-Profile/
+Browser/
+
+# ===== 代理内核运行时缓存与日志 =====
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.bak
+*.tmp
+*_backup
+clash.meta/*.db
+clash.meta/*.db_backup
+
+# ===== 本地工作数据 =====
+.workbuddy/
+
+# ===== 系统杂项 =====
+Thumbs.db
+desktop.ini
