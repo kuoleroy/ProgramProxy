@@ -14,17 +14,6 @@ Browser/
 clash.meta/*.db
 clash.meta/*.db_backup
 
-# ===== 节点配置（含服务器地址与密钥，不提交）=====
-clash.meta/config.yaml
-Xray/config.json
-hysteria/config.json
-hysteria2/config.json
-juicity/config.json
-mieru/config.json
-naiveproxy/config.json
-shadowquic/client.yaml
-singbox/config.json
-
 # ===== 本地工作数据 =====
 .workbuddy/
 
