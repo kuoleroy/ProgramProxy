@@ -1,0 +1,5 @@
+node_modules/
+nohup.out
+package-lock.json
+update.log
+auto_update.log

@@ -1,4 +1,4 @@
-cls
+﻿cls
 @echo off
 setlocal
 chcp 65001 >nul
