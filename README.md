@@ -29,7 +29,7 @@ Config files are not included in the repo. First run must fetch them:
    only press `1` when connection is broken or very slow
    (update may give worse IPs — don't update if it works)
 3. Browser opens automatically after proxy starts
-4. If main script crashes, use the `backup` version (e.g. `1_backup_clash_metaFQ.cmd`)
+4. If main script crashes, use the `backup` version (e.g. `1_clash_metaFQ_backup.cmd`)
 
 Try them in order — pick whichever is fastest.
 
