@@ -1,5 +1,7 @@
 # ProgramProxy
 
+> [English](README.md)
+
 Windows 一键代理包：双击脚本，自动启动本地代理并打开浏览器。
 
 基于：https://github.com/Alvin9999-newpac

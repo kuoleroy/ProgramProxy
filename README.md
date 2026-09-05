@@ -1,5 +1,7 @@
 # ProgramProxy
 
+> [中文说明](README.zh.md)
+
 Windows one-click proxy: double-click a script to start local proxy and open browser.
 
 Based on: https://github.com/Alvin9999-newpac
