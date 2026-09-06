@@ -103,11 +103,11 @@ goto startfq
 start "" /D "%~dp0clash.meta" "%~dp0clash.meta\clash.meta-windows-386.exe" -d "%~dp0clash.meta"
 echo Waiting for proxy to start, please wait...
 IF EXIST %~dp0Browser\chrome.exe (
-    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server=127.0.0.1:7890 about:blank
+    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server=127.0.0.1:7890 https://www.google.com/
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-    start chrome.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server=127.0.0.1:7890 about:blank
+    start chrome.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server=127.0.0.1:7890 https://www.google.com/
 	) else (
 		echo Chrome not found or not installed correctly. Try reinstalling Chrome.
 		echo Or try this:

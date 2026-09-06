@@ -41,12 +41,12 @@ goto startfq
 start "" /D "%~dp0Xray" "%~dp0Xray\xray.exe" -c "%~dp0Xray\config.json"
 echo 等待防火墙确认，请稍候...
 IF EXIST %~dp0Browser\msedge.exe (
-    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  about:blank
+    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  https://www.google.com/
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   about:blank
-	) else ( 
+    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   https://www.google.com/
+	) else (
 		echo Edge not found or not installed correctly. Try reinstalling Edge.！
 		echo 或者尝试下面的办法：
 		echo 右键点击桌面上的Microsoft Edge图标，点属性，找到msedge.exe文件的路径，然后把那个目录下的msedge.exe 同目录下的所有 dll文件和文件夹 一起拷贝到ProgramProxy文件夹下的Browser目录里，然后再运行ProgramProxy的防火墙脚本。

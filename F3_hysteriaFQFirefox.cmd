@@ -19,7 +19,7 @@ cd /d "%~dp0"
 >> "%~dp0Firefox-Profile\user.js" echo user_pref("network.proxy.socks_remote_dns", true);
 >> "%~dp0Firefox-Profile\user.js" echo user_pref("network.proxy.type", 1);
 >> "%~dp0Firefox-Profile\user.js" echo user_pref("network.dns.disablePrefetch", true);
->> "%~dp0Firefox-Profile\user.js" echo user_pref("browser.startup.homepage", "about:blank");
+>> "%~dp0Firefox-Profile\user.js" echo user_pref("browser.startup.homepage", "https://www.google.com/");
 cls
 
 title Hysteria Firefox
@@ -52,16 +52,16 @@ start /wait "" "%~dp0hysteria\ip_Update\ip_1.bat"
 goto startfq
 
 :startfq
- 
+
 start "" /D "%~dp0hysteria" "%~dp0hysteria\hysteria-tun-windows-6.0-386.exe" -c "%~dp0hysteria\config.json"
 IF EXIST "%ProgramFiles%\Mozilla Firefox\firefox.exe" (
-    start "" "%ProgramFiles%\Mozilla Firefox\firefox.exe" -no-remote -profile "%~dp0Firefox-Profile" about:blank
+    start "" "%ProgramFiles%\Mozilla Firefox\firefox.exe" -no-remote -profile "%~dp0Firefox-Profile" https://www.google.com/
 ) ELSE IF EXIST "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe" (
-    start "" "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe" -no-remote -profile "%~dp0Firefox-Profile" about:blank
+    start "" "%ProgramFiles(x86)%\Mozilla Firefox\firefox.exe" -no-remote -profile "%~dp0Firefox-Profile" https://www.google.com/
 ) ELSE (
     %SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" >nul 2>&1
     IF not errorlevel 1 (
-        start firefox.exe -no-remote -profile "%~dp0Firefox-Profile" about:blank
+        start firefox.exe -no-remote -profile "%~dp0Firefox-Profile" https://www.google.com/
     ) else (
         echo System Firefox not found, please install Firefox first.
         pause

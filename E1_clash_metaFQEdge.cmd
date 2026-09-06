@@ -51,11 +51,11 @@ goto startfq
 start "" /D "%~dp0clash.meta" "%~dp0clash.meta\clash.meta-windows-386.exe" -d "%~dp0clash.meta"
 echo 等待防火墙确认，请稍候...
 IF EXIST %~dp0Browser\msedge.exe (
-    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server=127.0.0.1:7890 about:blank
+    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server=127.0.0.1:7890 https://www.google.com/
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server=127.0.0.1:7890 about:blank
+    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server=127.0.0.1:7890 https://www.google.com/
 	) else (
 		echo Edge not found or not installed correctly. Try reinstalling Edge.！
 		echo 或者尝试下面的办法：

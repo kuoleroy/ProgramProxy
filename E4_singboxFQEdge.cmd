@@ -32,11 +32,11 @@ start "" /D "%~dp0singbox" "%~dp0singbox\sing-box.exe" run -c "%~dp0singbox\conf
 
 echo 等待防火墙确认，请稍候...
 IF EXIST %~dp0Browser\msedge.exe (
-    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  about:blank
+    start %~dp0Browser\msedge.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  https://www.google.com/
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   about:blank
+    start msedge.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   https://www.google.com/
 	) else (
 		echo Edge not found or not installed correctly. Try reinstalling Edge.！
 		echo 或者尝试下面的办法：

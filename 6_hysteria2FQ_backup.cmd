@@ -93,11 +93,11 @@ start "" /D "%~dp0hysteria2" "%~dp0hysteria2\hysteria2.exe" -c "%~dp0hysteria2\c
 
 echo Waiting for proxy to start, please wait...
 IF EXIST %~dp0Browser\chrome.exe (
-    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  about:blank
+    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080"  https://www.google.com/
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-    start chrome.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   about:blank
+    start chrome.exe --user-data-dir=%~dp0chrome-user-data  --proxy-server="socks5://127.0.0.1:1080"   https://www.google.com/
 	) else (
 		echo Chrome not found or not installed correctly. Try reinstalling Chrome.
 		echo Or try this:
